@@ -6,3 +6,12 @@ h1 {
 button {
     display: block;
 }
+
+body {
+    text-align: center;
+}
+
+.bwrapper {
+    display: flex;
+    justify-content: center;
+}

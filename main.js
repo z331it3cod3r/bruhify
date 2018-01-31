@@ -1,15 +1,18 @@
 $(document).ready(function () {
     var timesBruhed = $('#times');
+    var times = 0;
     $('#one').click(function () {
-        timesBruhed.html(Number(timesBruhed.html()) + 1);
+        times += 1;
+        timesBruhed.html(times);
         $('#oneh').show();
         setTimeout(function () {
             $('#oneh').hide();
         }, 250);
     });
     $('#two').click(function () {
-        if ((timesBruhed.html()) >= 100) {
-            timesBruhed.html(Number(timesBruhed.html()) + 2);
+        times += 2;
+        if ((timesBruhed.html()) >= 250) {
+            timesBruhed.html(times);
             $('#oneh').show();
             $('#twoh').show();
             setTimeout(function () {
@@ -17,12 +20,13 @@ $(document).ready(function () {
                 $('#twoh').hide();
             }, 250);
         } else {
-            alert('You need 100 bruhes to x2 bruh');
+            alert('You need 250 bruhes to x2 bruh.');
         }
     });
     $('#three').click(function () {
-        if ((timesBruhed.html()) >= 250) {
-            timesBruhed.html(Number(timesBruhed.html()) + 3);
+        if ((timesBruhed.html()) >= 500) {
+            times += 3;
+            timesBruhed.html(times);
             $('#oneh').show();
             $('#twoh').show();
             $('#threeh').show();
@@ -32,7 +36,7 @@ $(document).ready(function () {
                 $('#threeh').hide();
             }, 250);
         } else {
-            alert('You need 250 bruhes to x3 bruh');
+            alert('You need 500 bruhes to x3 bruh.');
         }
     });
 });
