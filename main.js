@@ -7,35 +7,42 @@ $(document).ready(function () {
     $('#bruh').click(function () {
         times += boost;
         timesBruhed.html(times);
-        $('#oneh').css('visibility', 'visible');
+        switch (boost) {
+            case 3:
+                sbruh('#threeh');
+            case 2:
+                sbruh('#twoh');
+            case 1:
+                sbruh('#oneh');
+        }
         reset();
     });
     $('#two').click(function () {
-        if (times >= 250) {
-            if (!(two)) {
+        if (!(two)) {
+            if (times >= 250) {
                 times -= 250;
                 timesBruhed.html(times);
                 boost = 2;
                 two = true;
             } else {
-                error('You have already bought x2 bruh.');
+                error('You need 250 bruhes to buy x2 bruh.')
             }
         } else {
-            error('You need 250 bruhes to buy x2 bruh.');
+            error('You have already bought x2 bruh.');
         }
     });
     $('#three').click(function () {
-        if (times >= 750) {
-            if (!(three)) {
+        if (!(three)) {
+            if (times >= 750) {
                 times -= 750;
                 timesBruhed.html(times);
                 boost = 3;
                 three = true;
             } else {
-                error('You have already bought x3 bruh.');
+                error('You need 750 bruhes to buy x3 bruh.')
             }
         } else {
-            error('You need 750 bruhes to buy x3 bruh.');
+            error('You have already bought x3 bruh.');
         }
     });
 
@@ -51,5 +58,9 @@ $(document).ready(function () {
             $('#twoh').css('visibility', 'hidden');
             $('#threeh').css('visibility', 'hidden');
         }, 250);
+    }
+
+    function sbruh(id) {
+        $(id).css('visibility', 'visible');
     }
 });

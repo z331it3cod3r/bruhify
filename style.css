@@ -21,6 +21,7 @@ body {
     visibility: visible;
     font-size: 36pt;
     display: block;
+    color: lightgreen;
 }
 
 #money {
