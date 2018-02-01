@@ -1,10 +1,7 @@
 h1 {
-    display: none;
-    font-size: 72pt;
-}
-
-button {
-    display: block;
+    visibility: hidden;
+    font-size: 54pt;
+    display: inline;
 }
 
 body {
@@ -14,4 +11,18 @@ body {
 .bwrapper {
     display: flex;
     justify-content: center;
+}
+
+.h1wrapper {
+    display: block;
+}
+
+#welcome {
+    visibility: visible;
+    font-size: 36pt;
+    display: block;
+}
+
+#money {
+    color: red;
 }

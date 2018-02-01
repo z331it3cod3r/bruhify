@@ -1,42 +1,55 @@
 $(document).ready(function () {
     var timesBruhed = $('#times');
-    var times = 0;
-    $('#one').click(function () {
-        times += 1;
+    var times = 752;
+    var boost = 1;
+    var two = false;
+    var three = false;
+    $('#bruh').click(function () {
+        times += boost;
         timesBruhed.html(times);
-        $('#oneh').show();
-        setTimeout(function () {
-            $('#oneh').hide();
-        }, 250);
+        $('#oneh').css('visibility', 'visible');
+        reset();
     });
     $('#two').click(function () {
-        times += 2;
-        if ((timesBruhed.html()) >= 250) {
-            timesBruhed.html(times);
-            $('#oneh').show();
-            $('#twoh').show();
-            setTimeout(function () {
-                $('#oneh').hide();
-                $('#twoh').hide();
-            }, 250);
+        if (times >= 250) {
+            if (!(two)) {
+                times -= 250;
+                timesBruhed.html(times);
+                boost = 2;
+                two = true;
+            } else {
+                error('You have already bought x2 bruh.');
+            }
         } else {
-            alert('You need 250 bruhes to x2 bruh.');
+            error('You need 250 bruhes to buy x2 bruh.');
         }
     });
     $('#three').click(function () {
-        if ((timesBruhed.html()) >= 500) {
-            times += 3;
-            timesBruhed.html(times);
-            $('#oneh').show();
-            $('#twoh').show();
-            $('#threeh').show();
-            setTimeout(function () {
-                $('#oneh').hide();
-                $('#twoh').hide();
-                $('#threeh').hide();
-            }, 250);
+        if (times >= 750) {
+            if (!(three)) {
+                times -= 750;
+                timesBruhed.html(times);
+                boost = 3;
+                three = true;
+            } else {
+                error('You have already bought x3 bruh.');
+            }
         } else {
-            alert('You need 500 bruhes to x3 bruh.');
+            error('You need 750 bruhes to buy x3 bruh.');
         }
     });
+
+    function error(t) {
+        $('#money').html(t);
+        $('#money').css('visibility', 'visible');
+    }
+
+    function reset() {
+        error('<br>');
+        setTimeout(function () {
+            $('#oneh').css('visibility', 'hidden');
+            $('#twoh').css('visibility', 'hidden');
+            $('#threeh').css('visibility', 'hidden');
+        }, 250);
+    }
 });
