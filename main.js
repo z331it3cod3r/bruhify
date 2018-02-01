@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var timesBruhed = $('#times');
-    var times = 752;
+    var times = 0;
     var boost = 1;
     var two = false;
     var three = false;
