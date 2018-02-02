@@ -9,12 +9,12 @@ body {
 }
 
 .bwrapper {
-    display: flex;
+    display: inline;
     justify-content: center;
 }
 
 .h1wrapper {
-    display: block;
+    display: inline;
 }
 
 #welcome {
@@ -26,4 +26,8 @@ body {
 
 #money {
     color: red;
+}
+
+image {
+    display: inline;
 }
