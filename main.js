@@ -45,7 +45,7 @@ $(document).ready(function () {
             $('#twoh').css('visibility', 'hidden');
             $('#threeh').css('visibility', 'hidden');
         }, 250);
-        if (times >= 1000) {
+        if (times >= 1000000) {
             document.write('<div style="text-align:center;"<h1>YOU WON!</h1><p onclick="window.location.reload();">Play Again</p></div>')
         }
     }
