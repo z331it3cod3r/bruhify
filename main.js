@@ -31,7 +31,7 @@ $(document).ready(function () {
         buy(500, 3, this)
     });
     kd.run(function () {
-        kd.tick();
+        //kd.tick();
     })
 
     function error(t) {
