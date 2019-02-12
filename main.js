@@ -1,5 +1,7 @@
 const app = new Vue({
   el: '#app',
-  data: {},
+  data: {
+    multiplier: 1
+  },
   methods: {}
 });
