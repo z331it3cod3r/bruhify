@@ -4,7 +4,10 @@ const app = new Vue({
     data: {
         multiplier: 1,
         bruhs: 0,
-        warning: ''
+        warning: '',
+        classes: {
+            multiply: 'btn btn-danger'
+        }
     },
     methods: {
         bruh: function() {
