@@ -6,7 +6,7 @@ const app = new Vue({
     },
     methods: {
         bruh: function() {
-
+            bruhs += this.mutiplier;
         }
     }
 });
