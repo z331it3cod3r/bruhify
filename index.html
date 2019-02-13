@@ -33,9 +33,14 @@
     </div>
     <div class="d-flex justify-content-between">
         <h1>Bruhify!</h1>
-        <p>Multiplier: x{{ multiplier }}</p>
+        <div class="align-content-center">
+            <p>Multiplier: x{{ multiplier }}</p>
+            <button @click="alert('In dev!')">Upgrade</button>
+        </div>
     </div>
-    <button class="btn btn-primary" @click="bruh" @keydown.enter.prevent="warn('Enter is not allowed.')" @keydown.space.prevent="warn('Space is not allowed.')">Bruh Me</button>
+    <button class="btn btn-primary" @click="bruh" @keydown.enter.prevent="warn('Enter is not allowed.')" @keydown.space.prevent="warn('Space is not allowed.')">
+        Bruh Me
+    </button>
     Bruhs: {{ bruhs }}
 </div>
 <script src="js/main.js"></script>
