@@ -7,6 +7,9 @@ const app = new Vue({
         warning: '',
         classes: {
             multiply: 'btn btn-danger'
+        },
+        cost: {
+            multiply: 100
         }
     },
     methods: {
