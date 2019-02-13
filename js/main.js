@@ -6,7 +6,7 @@ const app = new Vue({
         bruhs: 0,
         warning: '',
         classes: {
-            multiply: 'btn btn-danger'
+            multiply: 'btn-danger'
         },
         cost: {
             multiply: 100
