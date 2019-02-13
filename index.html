@@ -17,7 +17,7 @@
         <h1>Bruhify!</h1>
         <p>Multiplier: x{{ multiplier }}</p>
     </div>
-    <button class="btn btn-primary" @click.once="bruh">Bruh Me</button>
+    <button class="btn btn-primary" @click="bruh" @keydown.enter.prevent="alert('no')">Bruh Me</button>
     Bruhs: {{ bruhs }}
 </div>
 <script src="js/main.js"></script>
