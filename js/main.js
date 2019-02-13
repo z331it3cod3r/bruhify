@@ -1,3 +1,4 @@
+const konami_code = [];
 const app = new Vue({
     el: '#app',
     data: {
@@ -7,6 +8,9 @@ const app = new Vue({
     methods: {
         bruh: function() {
             this.bruhs += this.multiplier;
+        },
+        warn: function(message) {
+            alert(message);
         }
     }
 });
