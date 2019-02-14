@@ -30,7 +30,7 @@
             <p>Multiplier: x{{ multiplier }}</p>
             <button :class="'btn ' + classes.upgrade" @click="upgrade">Upgrade ({{ cost.upgrade.costs[cost.upgrade.i] ? cost.upgrade.costs[cost.upgrade.i] : 'max' }})</button>
         </div>
-        <div class="toast" id="poor">
+        <div class="d-block toast" id="poor">
             <div class="toast-header">
                 Ur Broke
             </div>
