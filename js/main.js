@@ -19,7 +19,7 @@ const app = new Vue({
             this.bruh_img = 'stickfigurewithtrollface.png';
             setTimeout(function() {
                 app.bruh_img = 'stickfigure.png';
-            }, 500);
+            }, 250);
             if(this.bruhs >= this.cost.multiply) {
                 this.classes.multiply = 'btn-success';
             }
