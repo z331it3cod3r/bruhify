@@ -30,7 +30,7 @@
             <p>Multiplier: x{{ multiplier }}</p>
             <button :class="'btn ' + classes.upgrade"  
                     title="Ur broke" data-toggle="popover" 
-                    data-trigger="focus" data-content="Ur too broke to buy this. Try getting some bruhs." 
+                    data-trigger="click" data-content="Ur too broke to buy this. Try getting some bruhs." 
                     @click="upgrade">
                 Upgrade ({{ cost.upgrade.costs[cost.upgrade.i] ? cost.upgrade.costs[cost.upgrade.i] : 'max' }})
             </button>
