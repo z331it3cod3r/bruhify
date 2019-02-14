@@ -7,7 +7,7 @@ const app = new Vue({
         warning: '',
         bruh_img: 'stickfigure.png',
         classes: {
-            multiply: 'btn-danger'
+            upgrade: 'btn-danger'
         },
         cost: {
             multiply: 100
@@ -27,13 +27,19 @@ const app = new Vue({
                 app.bruh_img = 'stickfigure.png';
                 app.timeouts.troll_img = false;
             }, 250);
-            if(this.bruhs >= this.cost.multiply) {
-                this.classes.multiply = 'btn-success';
+            if(this.bruhs >= this.cost.upgrade) {
+                this.classes.upgrade = 'btn-success';
             }
         },
         warn: function(message) {
             this.warning = message;
             $('#warning_modal').modal();
+        },
+        upgrade: function() {
+            if(this.bruhs >= this.cost.upgrade) {
+                this.bruhs -= this.cost.upgrade;
+                this.multiplier += 1;
+            }
         }
     }
 });
