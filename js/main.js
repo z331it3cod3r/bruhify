@@ -10,7 +10,7 @@ const app = new Vue({
             upgrade: 'btn-danger'
         },
         cost: {
-            multiply: 100
+            upgrade: 100
         },
         timeouts: {
             troll_img: false
