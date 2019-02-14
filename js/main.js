@@ -58,6 +58,6 @@ const app = new Vue({
         }
     }
 });
-$(document).ready(function() {
-    $('.toast').toast();
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover(); 
 });
