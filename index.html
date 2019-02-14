@@ -46,7 +46,7 @@
         <h1>Bruhify!</h1>
         <div class="align-content-center justify-content-center">
             <p>Multiplier: x{{ multiplier }}</p>
-            <button :class="'btn ' + classes.upgrade" @click="upgrade">Upgrade ({{ cost.upgrade }})</button>
+            <button :class="'btn ' + classes.upgrade" @click="upgrade">Upgrade ({{ cost.upgrade.costs[cost.upgrade.i] }})</button>
         </div>
     </div>
     <div class="row">
