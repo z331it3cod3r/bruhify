@@ -37,10 +37,13 @@ const app = new Vue({
             $('#warning_modal').modal();
         },
         upgrade: function() {
-            var cost = this.cost.upgrade.costs[this.cost.upgrade.i]
-            if(this.bruhs >= this.cost.upgrade.costs[this.cost.upgrade.i]) {
-                this.bruhs -= this.cost.upgrade.costs;
-                this.multiplier += 1;
+            let cost = this.cost.upgrade.costs[this.cost.upgrade.i]
+            if(cost) {
+                if(this.bruhs >= cost) {
+                    this.bruhs -= cost;
+                    this.multiplier += 1;
+                    this.cost.upgrade.i++;
+                }
             }
             this.tick();
         },
