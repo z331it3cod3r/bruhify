@@ -38,14 +38,12 @@
         <h1>Bruhify!</h1>
         <div class="align-content-center justify-content-center">
             <p>Multiplier: x{{ multiplier }}</p>
-            <button :class="'btn ' + classes.multiply" @click="alert('In dev!')">Upgrade ({{ cost.multiply }})</button>
+            <button :class="'btn ' + classes.multiply" @click="warn('In dev!')">Upgrade ({{ cost.multiply }})</button>
         </div>
     </div>
     <div class="row">
         <div class="col-5">
-            <button class="btn btn-primary" @click="bruh" @keydown.enter.prevent="warn('Enter is not allowed.')" @keydown.space.prevent="warn('Space is not allowed.')">
-                Bruh Me
-            </button>
+            <img src="assets/stickfigure.png" alt="Bruh Me" class="d-inline inline-image" @click="bruh">
         </div>
         <div class="col-7">
             <p class="h2">Bruhs: {{ bruhs }}</p>

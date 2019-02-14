@@ -17,6 +17,7 @@ const app = new Vue({
             this.bruhs += this.multiplier;
             if(this.bruhs >= this.cost.multiply) {
                 this.classes.multiply = 'btn-success';
+            }
         },
         warn: function(message) {
             this.warning = message;
