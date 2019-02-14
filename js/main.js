@@ -5,6 +5,7 @@ const app = new Vue({
         multiplier: 1,
         bruhs: 0,
         warning: '',
+        bruh_img: 'stickfigure.png',
         classes: {
             multiply: 'btn-danger'
         },
@@ -15,6 +16,7 @@ const app = new Vue({
     methods: {
         bruh: function() {
             this.bruhs += this.multiplier;
+            
             if(this.bruhs >= this.cost.multiply) {
                 this.classes.multiply = 'btn-success';
             }
