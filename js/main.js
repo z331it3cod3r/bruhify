@@ -43,6 +43,8 @@ const app = new Vue({
                     this.bruhs -= cost;
                     this.multiplier += 1;
                     this.cost.upgrade.i++;
+                } else {
+                    $('#poor').toast('show');
                 }
             }
             this.tick();
@@ -55,4 +57,7 @@ const app = new Vue({
             }
         }
     }
+});
+$(document).ready(function() {
+    $('.toast').toast();
 });
