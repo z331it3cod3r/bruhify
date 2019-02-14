@@ -24,22 +24,22 @@
             <button type="submit" class="btn btn-primary mb-2">Redeem!</button>
         </form>
     </div>
-    <div class="toast" id="poor">
-        <div class="toast-header">
-            Ur Broke
-        </div>
-        <div class="toast-body">
-            Sorry, but you appear to be broke, so you can not purchase this.
-            
-            Bruhify for dummies:
-            To buy stuff you need bruhs. Get bruhs by clicking on the stick figure.
-        </div>
-    </div>
     <div class="d-flex justify-content-between">
         <h1>Bruhify!</h1>
         <div class="align-content-center justify-content-center">
             <p>Multiplier: x{{ multiplier }}</p>
             <button :class="'btn ' + classes.upgrade" @click="upgrade">Upgrade ({{ cost.upgrade.costs[cost.upgrade.i] ? cost.upgrade.costs[cost.upgrade.i] : 'max' }})</button>
+        </div>
+        <div class="toast" id="poor">
+            <div class="toast-header">
+                Ur Broke
+            </div>
+            <div class="toast-body">
+                Sorry, but you appear to be broke, so you can not purchase this.
+                <br>
+                Bruhify for dummies:
+                To buy stuff you need bruhs. Get bruhs by clicking on the stick figure.
+            </div>
         </div>
     </div>
     <div class="row">
