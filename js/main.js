@@ -11,14 +11,21 @@ const app = new Vue({
         },
         cost: {
             multiply: 100
+        },
+        timeouts: {
+            troll_img: false
         }
     },
     methods: {
         bruh: function() {
             this.bruhs += this.multiplier;
             this.bruh_img = 'stickfigurewithtrollface.png';
-            setTimeout(function() {
+            if(this.timeouts.troll_img) {
+                clearTimeout(this.timeouts.troll_img);
+            }
+            this.timeouts.troll_img = setTimeout(function() {
                 app.bruh_img = 'stickfigure.png';
+                app.timeouts.troll_img = false;
             }, 250);
             if(this.bruhs >= this.cost.multiply) {
                 this.classes.multiply = 'btn-success';
