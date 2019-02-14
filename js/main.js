@@ -43,7 +43,7 @@ const app = new Vue({
             }
             this.tick();
         },
-        tick: {
+        tick: function() {
             if(this.bruhs >= this.cost.upgrade) {
                 this.classes.upgrade = 'btn-success';
             } else {
