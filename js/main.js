@@ -1,4 +1,4 @@
-const konami_code = [];
+// noinspection JSUnresolvedFunction
 const app = new Vue({
     el: '#app',
     data: {
@@ -6,6 +6,7 @@ const app = new Vue({
         bruhs: 0,
         warning: '',
         bruh_img: 'stickfigure.png',
+        promo: '',
         classes: {
             upgrade: 'btn-danger'
         },
@@ -16,12 +17,14 @@ const app = new Vue({
             }
         },
         timeouts: {
-            troll_img: false
+            troll_img: false,
+            upgrade_popover: false
         }
     },
     methods: {
         bruh: function() {
             this.bruhs += this.multiplier;
+            // noinspection JSUnusedGlobalSymbols
             this.bruh_img = 'stickfigurewithtrollface.png';
             if(this.timeouts.troll_img) {
                 clearTimeout(this.timeouts.troll_img);
@@ -32,10 +35,6 @@ const app = new Vue({
             }, 250);
             this.tick();
         },
-        warn: function(message) {
-            this.warning = message;
-            $('#warning_modal').modal();
-        },
         upgrade: function() {
             let cost = this.cost.upgrade.costs[this.cost.upgrade.i];
             if(cost) {
@@ -43,6 +42,15 @@ const app = new Vue({
                     this.bruhs -= cost;
                     this.multiplier += 1;
                     this.cost.upgrade.i++;
+                } else {
+                    $('#upgrade_btn').popover('show');
+                    if(this.timeouts.upgrade_popover) {
+                        clearTimeout(this.timeouts.upgrade_popover);
+                    }
+                    setTimeout(function() {
+                        $('#upgrade_btn').popover('hide');
+                        app.timeouts.upgrade_popover = false;
+                    }, 1000);
                 }
             }
             this.tick();
@@ -50,11 +58,12 @@ const app = new Vue({
         tick: function() {
             if(this.bruhs >= this.cost.upgrade.costs[this.cost.upgrade.i]) {
                 this.classes.upgrade = 'btn-success';
-                $('#upgrade_btn').popover('disable');
             } else {
                 this.classes.upgrade = 'btn-danger';
-                $('#upgrade_btn').popover('enable');
             }
+        },
+        redeem: function () {
+            $('#promo').addClass('border-danger');
         }
     }
 });
