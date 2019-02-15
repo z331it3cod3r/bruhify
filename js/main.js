@@ -37,14 +37,12 @@ const app = new Vue({
             $('#warning_modal').modal();
         },
         upgrade: function() {
-            let cost = this.cost.upgrade.costs[this.cost.upgrade.i]
+            let cost = this.cost.upgrade.costs[this.cost.upgrade.i];
             if(cost) {
                 if(this.bruhs >= cost) {
                     this.bruhs -= cost;
                     this.multiplier += 1;
                     this.cost.upgrade.i++;
-                } else {
-                    $('#poor').toast('show');
                 }
             }
             this.tick();
@@ -52,8 +50,10 @@ const app = new Vue({
         tick: function() {
             if(this.bruhs >= this.cost.upgrade.costs[this.cost.upgrade.i]) {
                 this.classes.upgrade = 'btn-success';
+                $('#upgrade_btn').popover('disable');
             } else {
                 this.classes.upgrade = 'btn-danger';
+                $('#upgrade_btn').popover('enable');
             }
         }
     }
