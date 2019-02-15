@@ -8,7 +8,8 @@ const app = new Vue({
         bruh_img: 'stickfigure.png',
         promo: '',
         promos: {
-            barrel_maker: true
+            barrel_maker: true,
+            bruh: true
         },
         classes: {
             upgrade: 'btn-danger'
@@ -67,10 +68,16 @@ const app = new Vue({
         },
         redeem: function () {
             this.promo = this.promo.toLowerCase();
-            if((this.promo == 'barrel maker') && this.promos.barrel_maker) {
+            if(this.promo == 'barrel maker' && this.promos.barrel_maker) {
                 $('#promo').removeClass('border-danger');
                 this.promos.barrel_maker = false;
                 this.bruhs += 500;
+                this.promo = '';
+                this.tick();
+            } else if(this.promo == 'bruh' && this.promos.bruh) {
+                $('#promo').removeClass('border-danger');
+                this.promos.bruh = false;
+                this.multiplier += 3;
                 this.promo = '';
                 this.tick();
             } else {
