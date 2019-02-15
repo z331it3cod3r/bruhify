@@ -87,8 +87,8 @@ const app = new Vue({
 });
 
 function promo_code(code) {
+    let code_name = code.replace(' ', '_');
     if(app.promo === code && app.promos[code_name]) {
-        let code_name = code.replace(' ', '_');
         app.promos[code_name] = false;
         $('#promo').removeClass('border-danger');
         app.promo = '';
