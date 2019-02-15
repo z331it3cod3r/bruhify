@@ -1,3 +1,6 @@
+$(document).ready(function() {
+    $('[data-toggle="popover"]').popover();
+});
 // noinspection JSUnresolvedFunction
 const app = new Vue({
     el: '#app',
@@ -9,7 +12,8 @@ const app = new Vue({
         promo: '',
         promos: {
             barrel_maker: true,
-            bruh: true
+            bruh: true,
+            aut0: true
         },
         classes: {
             upgrade: 'btn-danger'
@@ -68,24 +72,27 @@ const app = new Vue({
         },
         redeem: function () {
             this.promo = this.promo.toLowerCase();
-            if(this.promo == 'barrel maker' && this.promos.barrel_maker) {
-                $('#promo').removeClass('border-danger');
-                this.promos.barrel_maker = false;
+            if(promo_code('barrel maker')) {
                 this.bruhs += 500;
-                this.promo = '';
-                this.tick();
-            } else if(this.promo == 'bruh' && this.promos.bruh) {
-                $('#promo').removeClass('border-danger');
-                this.promos.bruh = false;
+            } else if(promo_code('bruh')) {
                 this.multiplier += 3;
-                this.promo = '';
-                this.tick();
+            } else if(promo_code('aut0')) {
+
             } else {
                 $('#promo').addClass('border-danger');
             }
+            this.tick();
         }
     }
 });
-$(document).ready(function() {
-    $('[data-toggle="popover"]').popover(); 
-});
+
+function promo_code(code) {
+    if(app.promo === code && app.promos[code_name]) {
+        let code_name = code.replace(' ', '_');
+        app.promos[code_name] = false;
+        $('#promo').removeClass('border-danger');
+        app.promo = '';
+        return true;
+    }
+    return false;
+}
