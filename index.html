@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vue.js"></script>
 </head>
@@ -28,9 +29,9 @@
         <h1>Bruhify!</h1>
         <div class="align-content-center justify-content-center">
             <p>Multiplier: x{{ multiplier }}</p>
-            <button :class="'btn ' + classes.upgrade"  
-                    title="Ur broke" data-toggle="popover" 
-                    data-trigger="click" data-content="Ur too broke to buy this. Try getting some bruhs." 
+            <button :class="'btn ' + classes.upgrade"
+                    title="Ur broke" data-toggle="popover"
+                    data-trigger="click" data-content="Ur too broke to buy this. Try getting some bruhs."
                     @click="upgrade">
                 Upgrade ({{ cost.upgrade.costs[cost.upgrade.i] ? cost.upgrade.costs[cost.upgrade.i] : 'max' }})
             </button>
