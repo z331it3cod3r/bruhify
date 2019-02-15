@@ -9,7 +9,7 @@ const app = new Vue({
         promo: '',
         promos: {
             barrel_maker: true
-        }
+        },
         classes: {
             upgrade: 'btn-danger'
         },
