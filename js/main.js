@@ -63,7 +63,12 @@ const app = new Vue({
             }
         },
         redeem: function () {
-            $('#promo').addClass('border-danger');
+            this.promo = this.promo.toLowerCase();
+            if(this.promo == 'barrel maker') {
+                $('#promo').removeClass('border-danger');
+            } else {
+                $('#promo').addClass('border-danger');
+            }
         }
     }
 });
