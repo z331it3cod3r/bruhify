@@ -72,6 +72,7 @@ const app = new Vue({
                 this.promos.barrel_maker = false;
                 this.bruhs += 500;
                 this.promo = '';
+                this.tick();
             } else {
                 $('#promo').addClass('border-danger');
             }
