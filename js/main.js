@@ -66,6 +66,8 @@ const app = new Vue({
             this.promo = this.promo.toLowerCase();
             if(this.promo == 'barrel maker') {
                 $('#promo').removeClass('border-danger');
+                this.bruhs += 500;
+                this.promo = '';
             } else {
                 $('#promo').addClass('border-danger');
             }
