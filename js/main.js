@@ -9,6 +9,10 @@ const app = new Vue({
         bruhs: 0,
         warning: '',
         bruh_img: 'stickfigure.png',
+        bruh_sound: {
+            object: new Audio('assets/bruh.mp3'),
+            playing: false
+        },
         promo: '',
         promos: {
             barrel_maker: true,
@@ -36,6 +40,14 @@ const app = new Vue({
             this.bruh_img = 'stickfigurewithtrollface.png';
             if(this.timeouts.troll_img) {
                 clearTimeout(this.timeouts.troll_img);
+            }
+            if(!this.bruh_sound.playing) {
+                this.bruh_sound.object.play();
+                this.bruh_sound.playing = true;
+                this.bruh_sound.object.onended = function() {
+                    app.bruh_sound.playing = false;
+                    app.bruh_sound.object.currentTime = 0;
+                }
             }
             this.timeouts.troll_img = setTimeout(function() {
                 app.bruh_img = 'stickfigure.png';
@@ -77,7 +89,7 @@ const app = new Vue({
             } else if(promo_code('bruh')) {
                 this.multiplier += 3;
             } else if(promo_code('aut0')) {
-
+                setInterval(this.bruh, 1000)
             } else {
                 $('#promo').addClass('border-danger');
             }
