@@ -39,15 +39,18 @@
     </div>
     <div class="row">
         <div class="col-5">
-            <img :src="'assets/' + bruh_img" alt="Bruh Me" class="d-inline inline-image" @click="bruh" style="border: 1px solid black">
+            <img :src="'assets/' + bruh_img" alt="Bruh Me" class="d-inline inline-image" @click="bruh">
         </div>
         <div class="col-7" style="z-index:5">
-            <p class="h2">Bruhs: {{ bruhs }}</p>
+            <div class="row">
+                <p class="h2">Bruhs: {{ bruhs }}</p>
+            </div>
+            <div class="row">
+                <div class="d-flex justify-content-end">
+                    <h2>Idle Bruhes Shop</h2>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="d-flex justify-content-end">
-        <h2>Idle Bruhes Shop</h2>
-        
     </div>
 </div>
 <script src="js/main.js"></script>
