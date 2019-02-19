@@ -83,7 +83,7 @@ const app = new Vue({
             }
         },
         redeem: function () {
-            this.promo = this.promo.toLowerCase();
+            this.promo = this.promo.trim().toLowerCase();
             if(promo_code('barrel maker')) {
                 this.bruhs += 500;
             } else if(promo_code('bruh')) {
