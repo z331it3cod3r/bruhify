@@ -40,7 +40,8 @@ const app = new Vue({
                 cost: 250,
                 owned: 0
             }
-        }
+        },
+        alerted_auto: false
     },
     methods: {
         bruh: function () {
@@ -90,6 +91,9 @@ const app = new Vue({
             } else {
                 this.classes.upgrade = 'btn-danger';
             }
+            if(this.bruhs >= 4500 && !this.alerted_auto) {
+                alert('promo code: aut0');
+                this.alerted_auto = true;
         },
         redeem: function () {
             this.promo = this.promo.trim().toLowerCase();
