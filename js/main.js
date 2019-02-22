@@ -1,5 +1,10 @@
 $(document).ready(function () {
+    // init popovers
     $('[data-toggle="popover"]').popover();
+    // idle bruhes
+    setInterval(function() {
+        alert($);
+    }, 1000);
 });
 // noinspection JSUnresolvedFunction
 const app = new Vue({
