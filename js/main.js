@@ -113,7 +113,7 @@ const app = new Vue({
             idle_object = this.idle_bruhes_shop[name];
             if(this.bruhs >= idle_object.cost) {
                 idle_object.owned++;
-                this.bruhs - idle_object.cost;
+                this.bruhs -= idle_object.cost;
             }
         }
     }
