@@ -103,7 +103,7 @@ const app = new Vue({
             } else if (promo_code('bruh')) {
                 this.multiplier += 3;
             } else if (promo_code('aut0')) {
-                setInterval(this.bruh, 1000)
+                setInterval(this.bruh, 250)
             } else {
                 $('#promo').addClass('border-danger');
             }
