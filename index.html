@@ -49,12 +49,12 @@
             <div class="row d-flex justify-content-center">
                 <h2>Idle Bruhes Shop</h2>
                 <div class="overflow-y-scroll">
-                    <div class="card" v-for="idle_bruh in idle_bruhes_shop">
+                    <div class="card" v-for="idle_bruh, name in idle_bruhes_shop">
                         <div class="card-body">
                             <h4 class="card-title">{{ idle_bruh.title }}</h4>
                             <div class="row">
                                 <div class="col-10">
-                                    <p>{{ idle_bruh.description }} test: {{ idle_bruhes_shop[idle_bruh] }}</p>
+                                    <p>{{ idle_bruh.description }} test: {{ name }}</p>
                                     <span class="d-inline font-weight-bold">{{ idle_bruh.bps }} b/sec. Owned: {{ idle_bruh.owned }}</span>
                                 </div>
                                 <div class="col-2">
