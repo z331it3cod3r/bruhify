@@ -94,6 +94,7 @@ const app = new Vue({
             if(this.bruhs >= 4500 && !this.alerted_auto) {
                 alert('promo code: aut0');
                 this.alerted_auto = true;
+            }
         },
         redeem: function () {
             this.promo = this.promo.trim().toLowerCase();
