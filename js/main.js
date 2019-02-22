@@ -3,7 +3,9 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
     // idle bruhes
     setInterval(function() {
-        alert($);
+        $.each(app.idle_bruhes_shop, function(i, obj) {
+            app.bruhs += obj.bps * obj.owned;
+        });
     }, 1000);
 });
 // noinspection JSUnresolvedFunction
