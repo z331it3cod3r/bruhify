@@ -5,5 +5,5 @@ onmessage = function(e) {
 for(obj in idle_bruh_shop) {
     setInterval(function() {
         postMessage();
-    }, 1/obj.bps);
+    }, 1/(obj.bps * obj.owned));
 }
