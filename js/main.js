@@ -2,11 +2,10 @@ $(document).ready(function () {
     // init popovers
     $('[data-toggle="popover"]').popover();
     // idle bruhes
-    setInterval(function() {
-        $.each(app.idle_bruhes_shop, function(i, obj) {
-            app.bruhs += obj.bps * obj.owned;
-        });
-    }, 1000);
+    app.idle_bruhes_worker.postMessage(app.idle_bruhes_shop);
+    app.idle_bruhes_worker.onmessage = function() {
+        app.bruhs++;
+    }
 });
 // noinspection JSUnresolvedFunction
 const app = new Vue({
@@ -39,6 +38,7 @@ const app = new Vue({
             troll_img: false,
             upgrade_popover: false
         },
+        idle_bruhes_worker: new Worker('idle_bruhes.js'),
         idle_bruhes_shop: {
             grandpa: {
                 bps: 0.1,
@@ -121,6 +121,7 @@ const app = new Vue({
             if(this.bruhs >= idle_object.cost) {
                 idle_object.owned++;
                 this.bruhs -= idle_object.cost;
+                this.idle_bruhes_worker.postMessage(this.idle_bruhes_shop);
             }
         }
     }
