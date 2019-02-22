@@ -54,12 +54,12 @@
                             <h4 class="card-title">{{ idle_bruh.title }}</h4>
                             <div class="row">
                                 <div class="col-10">
-                                    <p>{{ idle_bruh.description }} test: {{ name }}</p>
+                                    <p>{{ idle_bruh.description }}</p>
                                     <span class="d-inline font-weight-bold">{{ idle_bruh.bps }} b/sec. Owned: {{ idle_bruh.owned }}</span>
                                 </div>
                                 <div class="col-2">
                                     <button :class="'btn float-right ' + (bruhs >= idle_bruh.cost ? 'btn-success' : 'btn-danger')"
-                                    @click="">
+                                    @click="buy(name)">
                                         Buy ({{ idle_bruh.cost }})
                                     </button>
                                 </div>
