@@ -108,6 +108,13 @@ const app = new Vue({
                 $('#promo').addClass('border-danger');
             }
             this.tick();
+        },
+        buy: function(name) {
+            idle_object = this.idle_bruhes_shop[name];
+            if(this.bruhs >= idle_object.cost) {
+                idle_object.owned++;
+                this.bruhs - idle_object.cost;
+            }
         }
     }
 });
