@@ -77,7 +77,7 @@ const app = new Vue({
             if (cost) {
                 if (this.bruhs >= cost) {
                     this.bruhs -= cost;
-                    this.multiplier += 1;
+                    this.multiplier++;
                     this.upgrade.i++;
                 } else {
                     $('#upgrade_btn').popover('show');
@@ -90,7 +90,6 @@ const app = new Vue({
                     }, 1000);
                 }
             }
-            this.tick();
         },
         tick: function () {
             if(this.bruhs >= 4500 && cache('aut0')) {
