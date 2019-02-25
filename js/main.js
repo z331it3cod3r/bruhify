@@ -7,8 +7,9 @@ $(document).ready(function () {
         let data = e.data;
         if(typeof data === 'string') {
             alert(data);
+        } else {
+            app.bruhs++;
         }
-        app.bruhs++;
         alert('m receiving');
     }
 });
