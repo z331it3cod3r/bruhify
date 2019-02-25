@@ -6,7 +6,7 @@ $(document).ready(function () {
     app.idle_bruhes_worker.onmessage = function(e) {
         let data = e.data;
         if(typeof data === 'string') {
-            alert.log(data);
+            alert(data);
         }
         app.bruhs++;
         alert('m receiving');
