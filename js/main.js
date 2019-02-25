@@ -1,4 +1,5 @@
-$(document).ready(function () {
+try {
+    $(document).ready(function () {
     // init popovers
     $('[data-toggle="popover"]').popover();
     // idle bruhes
@@ -141,4 +142,7 @@ function cache() {
         return false;
     }
     return true;
+}
+} catch (e) {
+    alert(e);
 }
