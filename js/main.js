@@ -137,7 +137,7 @@ function cache() {
     }
     if(!variable) {
         variable = true;
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
