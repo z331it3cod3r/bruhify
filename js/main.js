@@ -73,12 +73,12 @@ const app = new Vue({
             this.tick();
         },
         upgrade: function () {
-            let cost = this.cost.upgrade.costs[this.cost.upgrade.i];
+            let cost = this.upgrade.costs[this.upgrade.i];
             if (cost) {
                 if (this.bruhs >= cost) {
                     this.bruhs -= cost;
                     this.multiplier += 1;
-                    this.cost.upgrade.i++;
+                    this.upgrade.i++;
                 } else {
                     $('#upgrade_btn').popover('show');
                     if (this.timeouts.upgrade_popover) {
