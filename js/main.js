@@ -16,26 +16,23 @@ const app = new Vue({
     data: {
         multiplier: 1,
         bruhs: 0,
-        warning: '',
         bruh_img: 'stickfigure.png',
         bruh_sound: {
             object: new Audio('assets/bruh.mp3'),
             playing: false
         },
         promo: '',
-        promos: {
-            barrel_maker: true,
-            bruh: true,
-            aut0: true
-        },
-        classes: {
-            upgrade: 'btn-danger'
-        },
-        cost: {
-            upgrade: {
-                i: 0,
-                costs: [100, 250, 500, 1000, 1750, 2500, false]
+        cache: {
+            aut0: false,
+            promos: {
+                barrel_maker: false,
+                bruh: false,
+                aut0: false
             }
+        },
+        upgrade: {
+            i: 0,
+            costs: [100, 250, 500, 1000, 1750, 2500, 5000, 7500, 10000, false]
         },
         timeouts: {
             troll_img: false,
@@ -48,10 +45,10 @@ const app = new Vue({
                 title: 'Retro 1980s Grandpa',
                 description: 'Lived in the stone age. Doesn\'t know slang. Took 4 hours to teach him how to bruh.',
                 cost: 250,
+                cost_add: 10,
                 owned: 0
             }
-        },
-        alerted_auto: false
+        }
     },
     methods: {
         bruh: function () {
@@ -96,14 +93,8 @@ const app = new Vue({
             this.tick();
         },
         tick: function () {
-            if (this.bruhs >= this.cost.upgrade.costs[this.cost.upgrade.i]) {
-                this.classes.upgrade = 'btn-success';
-            } else {
-                this.classes.upgrade = 'btn-danger';
-            }
-            if(this.bruhs >= 4500 && !this.alerted_auto) {
+            if(this.bruhs >= 4500 && cache('aut0')) {
                 alert('promo code: aut0');
-                this.alerted_auto = true;
             }
         },
         redeem: function () {
@@ -132,11 +123,21 @@ const app = new Vue({
 
 function promo_code(code) {
     let code_name = code.replace(' ', '_');
-    if (app.promo === code && app.promos[code_name]) {
-        app.promos[code_name] = false;
+    if (app.promo === code && cache('promos', code_name) {
         $('#promo').removeClass('border-danger');
         app.promo = '';
         return true;
     }
     return false;
+}
+function cache(...name) {
+    let variable = app.cache;
+    for(let i = 0; i < name.length; i++) {
+        variable = variable[name[i]];
+    }
+    if(!variable) {
+        variable = true;
+        return false;
+    }
+    return true;
 }
