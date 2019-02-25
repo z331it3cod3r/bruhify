@@ -3,7 +3,11 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
     // idle bruhes
     app.idle_bruhes_worker.postMessage(app.idle_bruhes_shop);
-    app.idle_bruhes_worker.onmessage = function() {
+    app.idle_bruhes_worker.onmessage = function(e) {
+        let data = e.data;
+        if(typeof data === 'string') {
+            console.log(data);
+        }
         app.bruhs++;
     }
 });
@@ -38,7 +42,7 @@ const app = new Vue({
             troll_img: false,
             upgrade_popover: false
         },
-        idle_bruhes_worker: new Worker('idle_bruhes.js'),
+        idle_bruhes_worker: new Worker('js/idle_bruhes.js'),
         idle_bruhes_shop: {
             grandpa: {
                 bps: 0.1,
@@ -122,6 +126,7 @@ const app = new Vue({
                 idle_object.owned++;
                 this.bruhs -= idle_object.cost;
                 this.idle_bruhes_worker.postMessage(this.idle_bruhes_shop);
+                alert('posted');
             }
         }
     }

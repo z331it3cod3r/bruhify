@@ -1,16 +1,17 @@
-const idle_bruh_shop = null;
-const timeouts = [];
+let idle_bruh_shop = null;
+let timeouts = [];
 onmessage = function(e) {
+    postMessage('received');
     idle_bruh_shop = e.data;
-    timeout_id = timeouts.pop();
+    let timeout_id = timeouts.pop();
     while(typeof timeout_id !== "undefined") {
         clearInterval(timeout_id);
     }
-    for(obj in idle_bruh_shop) {
+    for(let obj in idle_bruh_shop) {
         if(obj.owned > 0) {
             timeouts.push(setInterval(function() {
-                postMessage();
+                postMessage(true);
             }, 1000/(obj.bps * obj.owned)));    
         }
     }
-}
+};
