@@ -5,12 +5,9 @@ $(document).ready(function () {
     app.idle_bruhes_worker.postMessage(app.idle_bruhes_shop);
     app.idle_bruhes_worker.onmessage = function(e) {
         let data = e.data;
-        if(typeof data === 'string') {
-            alert(data);
-        } else {
+        if(typeof data === 'boolean' && data) {
             app.bruhs++;
         }
-        alert('m receiving');
     }
 });
 // noinspection JSUnresolvedFunction
