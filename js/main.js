@@ -47,6 +47,14 @@ const app = new Vue({
                 cost: 250,
                 cost_add: 10,
                 owned: 0
+            },
+            cool_face: {
+                bps: 0.25,
+                title: 'Cool face (▀̿Ĺ̯▀̿ ̿)',
+                description: '2 Cool 4 U',
+                cost: 500,
+                cost_add: 15,
+                owned: 0
             }
         }
     },
