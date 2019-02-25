@@ -72,7 +72,7 @@ const app = new Vue({
             }, 250);
             this.tick();
         },
-        upgrade: function () {
+        upgrade_func: function () {
             let cost = this.upgrade.costs[this.upgrade.i];
             if (cost) {
                 if (this.bruhs >= cost) {
@@ -110,10 +110,11 @@ const app = new Vue({
             this.tick();
         },
         buy: function(name) {
-            idle_object = this.idle_bruhes_shop[name];
+            let idle_object = this.idle_bruhes_shop[name];
             if(this.bruhs >= idle_object.cost) {
-                idle_object.owned++;
                 this.bruhs -= idle_object.cost;
+                idle_object.owned++;
+                idle_object.cost += idle_object.cost_add;
                 this.idle_bruhes_worker.postMessage(this.idle_bruhes_shop);
             }
         }
@@ -133,7 +134,6 @@ function cache() {
     let variable = app.cache;
     for(let i = 0; i < arguments.length; i++) {
         variable = variable[arguments[i]];
-        alert(JSON.stringify(variable));
     }
     if(!variable) {
         variable = true;

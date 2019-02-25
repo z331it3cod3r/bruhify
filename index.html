@@ -32,7 +32,7 @@
             <button :class="'btn ' + (bruhs >= upgrade.costs[upgrade.i] ? 'btn-success' : 'btn-danger')"
                     title="Ur broke" data-toggle="popover"
                     data-trigger="manual" data-content="Ur too broke to buy this. Try getting some bruhs."
-                    id="upgrade_btn" @click="upgrade">
+                    id="upgrade_btn" @click="upgrade_func">
                 Upgrade ({{ upgrade.costs[upgrade.i] ? upgrade.costs[upgrade.i] : 'max' }})
             </button>
         </div>
