@@ -29,11 +29,11 @@
         <h1>Bruhify!</h1>
         <div class="align-content-center justify-content-center">
             <p>Multiplier: x{{ multiplier }}</p>
-            <button :class="'btn btn-' + cost.upgrade.costs[cost.upgrade.i] <= bruhs ? 'success' : 'danger'"
+            <button :class="'btn ' + (bruhs >= upgrade.costs[upgrade.i] ? 'btn-success' : 'btn-danger')"
                     title="Ur broke" data-toggle="popover"
                     data-trigger="manual" data-content="Ur too broke to buy this. Try getting some bruhs."
                     id="upgrade_btn" @click="upgrade">
-                Upgrade ({{ cost.upgrade.costs[cost.upgrade.i] ? cost.upgrade.costs[cost.upgrade.i] : 'max' }})
+                Upgrade ({{ upgrade.costs[upgrade.i] ? upgrade.costs[cost.upgrade.i] : 'max' }})
             </button>
         </div>
     </div>
