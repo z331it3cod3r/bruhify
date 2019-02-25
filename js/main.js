@@ -6,10 +6,10 @@ $(document).ready(function () {
     app.idle_bruhes_worker.onmessage = function(e) {
         let data = e.data;
         if(typeof data === 'string') {
-            console.log(data);
+            alert.log(data);
         }
         app.bruhs++;
-        console.log('m receiving');
+        alert('m receiving');
     }
 });
 // noinspection JSUnresolvedFunction
