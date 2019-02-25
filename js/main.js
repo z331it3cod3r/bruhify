@@ -134,6 +134,7 @@ function cache() {
     let variable = app.cache;
     for(let i = 0; i < arguments.length; i++) {
         variable = variable[arguments[i]];
+        alert(JSON.stringify(variable));
     }
     if(!variable) {
         variable = true;
