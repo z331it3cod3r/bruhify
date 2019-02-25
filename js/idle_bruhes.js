@@ -13,7 +13,6 @@ onmessage = function(e) {
             obj = idle_bruh_shop[key];
             if(obj.owned > 0) {
                 let interval = 1000/(obj.bps * obj.owned).toFixed(3);
-                postMessage(interval.toString());
                 timeouts.push(setInterval(function() {
                     postMessage(true);
                 }, interval));    
