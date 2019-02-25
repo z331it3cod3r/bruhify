@@ -1,5 +1,4 @@
-try {
-    $(document).ready(function () {
+$(document).ready(function () {
     // init popovers
     $('[data-toggle="popover"]').popover();
     // idle bruhes
@@ -124,7 +123,7 @@ const app = new Vue({
 
 function promo_code(code) {
     let code_name = code.replace(' ', '_');
-    if (app.promo === code && cache('promos', code_name) {
+    if (app.promo === code && cache('promos', code_name)) {
         $('#promo').removeClass('border-danger');
         app.promo = '';
         return true;
@@ -142,7 +141,4 @@ function cache() {
         return false;
     }
     return true;
-}
-} catch (e) {
-    alert(e);
 }
