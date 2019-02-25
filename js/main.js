@@ -125,7 +125,6 @@ const app = new Vue({
                 idle_object.owned++;
                 this.bruhs -= idle_object.cost;
                 this.idle_bruhes_worker.postMessage(this.idle_bruhes_shop);
-                alert('posted');
             }
         }
     }
