@@ -9,6 +9,7 @@ $(document).ready(function () {
             console.log(data);
         }
         app.bruhs++;
+        console.log('m receiving');
     }
 });
 // noinspection JSUnresolvedFunction
