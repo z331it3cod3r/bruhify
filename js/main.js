@@ -130,10 +130,10 @@ function promo_code(code) {
     }
     return false;
 }
-function cache(...name) {
+function cache() {
     let variable = app.cache;
-    for(let i = 0; i < name.length; i++) {
-        variable = variable[name[i]];
+    for(let i = 0; i < arguments.length; i++) {
+        variable = variable[arguments[i]];
     }
     if(!variable) {
         variable = true;
