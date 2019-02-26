@@ -40,6 +40,15 @@ const app = new Vue({
         },
         idle_bruhes_worker: new Worker('js/idle_bruhes.js'),
         idle_bruhes_shop: {
+            caveman: {
+                bps: 0.05,
+                title: 'Caveman',
+                description: 'Lived before time was recorded. Barely knew English.',
+                quote: 'OOga Booga?',
+                cost: 50,
+                cost_add: 5,
+                owned: 0
+            },
             grandpa: {
                 bps: 0.1,
                 title: 'Retro 1980s Grandpa',
