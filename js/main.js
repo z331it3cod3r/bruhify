@@ -44,7 +44,7 @@ const app = new Vue({
                 bps: 0.05,
                 title: 'Caveman',
                 description: 'Lived before time was recorded. Barely knew English.',
-                quote: 'OOga Booga?',
+                quote: 'Ooga Booga?',
                 cost: 50,
                 cost_add: 5,
                 owned: 0
