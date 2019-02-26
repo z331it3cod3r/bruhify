@@ -3,9 +3,9 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
     // idle bruhes
     app.idle_bruhes_worker.postMessage(app.idle_bruhes_shop);
-    app.idle_bruhes_worker.onmessage = function(e) {
+    app.idle_bruhes_worker.onmessage = function (e) {
         let data = e.data;
-        if(typeof data === 'boolean' && data) {
+        if (typeof data === 'boolean' && data) {
             app.bruhs++;
         }
     }
@@ -44,6 +44,7 @@ const app = new Vue({
                 bps: 0.1,
                 title: 'Retro 1980s Grandpa',
                 description: 'Lived in the stone age. Doesn\'t know slang. Took 4 hours to teach him how to bruh.',
+                quote: 'Back in the day, we didn\'t have fancy electronics. We played Pong on huge arcade cabinets. By the way, I was the king of Pong.',
                 cost: 250,
                 cost_add: 10,
                 owned: 0
@@ -51,7 +52,8 @@ const app = new Vue({
             cool_face: {
                 bps: 0.25,
                 title: 'Cool face (▀̿Ĺ̯▀̿ ̿)',
-                description: '2 Cool 4 U',
+                description: 'Mr. Cool Face. Thinks he\'s better than everyone else because he hangs out with the other cool faces.',
+                quote: '2 Cool 4 U',
                 cost: 500,
                 cost_add: 15,
                 owned: 0
@@ -100,7 +102,7 @@ const app = new Vue({
             }
         },
         tick: function () {
-            if(this.bruhs >= 4500 && cache('aut0')) {
+            if (this.bruhs >= 4500 && cache('aut0')) {
                 alert('promo code: aut0');
             }
         },
@@ -117,9 +119,9 @@ const app = new Vue({
             }
             this.tick();
         },
-        buy: function(name) {
+        buy: function (name) {
             let idle_object = this.idle_bruhes_shop[name];
-            if(this.bruhs >= idle_object.cost) {
+            if (this.bruhs >= idle_object.cost) {
                 this.bruhs -= idle_object.cost;
                 idle_object.owned++;
                 idle_object.cost += idle_object.cost_add;
@@ -138,13 +140,23 @@ function promo_code(code) {
     }
     return false;
 }
+
 function cache() {
     let variable = app.cache;
-    for(let i = 0; i < arguments.length; i++) {
-        variable = variable[arguments[i]];
+    let hierarchy = [app.cache];
+    let i = 0;
+    let args = arguments;
+    for (let i = 0; i < args.length; i++) {
+        variable = variable[args[i]];
+        hierarchy.push(variable);
     }
-    if(!variable) {
-        variable = true;
+    if (!hierarchy.pop()) {
+        i = hierarchy.length;
+        hierarchy.push(true);
+        console.log(hierarchy);
+        while(i-- > 0) {
+            hierarchy[i][args[i]] = hierarchy.pop();
+        }
         return true;
     }
     return false;
