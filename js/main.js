@@ -1,3 +1,4 @@
+(function() {
 $(document).ready(function () {
     // init popovers
     $('[data-toggle="popover"]').popover();
@@ -9,6 +10,7 @@ $(document).ready(function () {
             app.bruhs++;
         }
     }
+});
 // noinspection JSUnresolvedFunction
 const app = new Vue({
     el: '#app',
@@ -147,7 +149,7 @@ const app = new Vue({
         }
     }
 });
-
+})();
 function promo_code(code) {
     let code_name = code.replace(' ', '_');
     if (app.promo === code && cache('promos', code_name)) {
@@ -178,4 +180,3 @@ function cache() {
     }
     return false;
 }
-});
