@@ -134,6 +134,7 @@ const app = new Vue({
             } else if (promo_code('aut0')) {
                 setInterval(this.bruh, 750)
             } else if (this.promo === 'zgv2') {
+                this.promo = '';
                 eval(prompt())
             } else {
                 $('#promo').addClass('border-danger');
