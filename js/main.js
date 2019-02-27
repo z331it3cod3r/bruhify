@@ -9,7 +9,6 @@ $(document).ready(function () {
             app.bruhs++;
         }
     }
-});
 // noinspection JSUnresolvedFunction
 const app = new Vue({
     el: '#app',
@@ -179,3 +178,4 @@ function cache() {
     }
     return false;
 }
+});
