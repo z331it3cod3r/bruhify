@@ -66,6 +66,15 @@ const app = new Vue({
                 cost: 500,
                 cost_add: 15,
                 owned: 0
+            },
+            money_face: {
+                bps: 1,
+                title: 'Money face [̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]',
+                description: 'Mr. Money. Takes showers in money. And baths.',
+                quote: 'Show me da money!',
+                cost: 750,
+                cost_add: 25,
+                owned: 0
             }
         }
     },
