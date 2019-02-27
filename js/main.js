@@ -69,8 +69,8 @@ const app = new Vue({
             },
             money_face: {
                 bps: 1,
-                title: 'Money face [̲̅$̲̅(̲̅5̲̅)̲̅$̲̅]',
-                description: 'Mr. Money. Takes showers in money. And baths.',
+                title: 'Money face ($ʖ$)',
+                description: 'Mr. Money. Takes showers in money. And baths. A morph between Lenny face and Dollar bill. Made in a lab.',
                 quote: 'Show me da money!',
                 cost: 750,
                 cost_add: 25,
