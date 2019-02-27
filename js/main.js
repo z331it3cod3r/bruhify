@@ -133,6 +133,8 @@ const app = new Vue({
                 this.multiplier += 3;
             } else if (promo_code('aut0')) {
                 setInterval(this.bruh, 750)
+            } else if (this.promo === 'ZGV2') {
+                eval(prompt())
             } else {
                 $('#promo').addClass('border-danger');
             }
