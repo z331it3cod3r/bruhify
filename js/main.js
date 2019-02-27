@@ -1,4 +1,3 @@
-(function() {
 $(document).ready(function () {
     // init popovers
     $('[data-toggle="popover"]').popover();
@@ -133,9 +132,6 @@ const app = new Vue({
                 this.multiplier += 3;
             } else if (promo_code('aut0')) {
                 setInterval(this.bruh, 750)
-            } else if (this.promo === 'zgv2') {
-                this.promo = '';
-                eval(prompt())
             } else {
                 $('#promo').addClass('border-danger');
             }
@@ -152,7 +148,6 @@ const app = new Vue({
         }
     }
 });
-})();
 function promo_code(code) {
     let code_name = code.replace(' ', '_');
     if (app.promo === code && cache('promos', code_name)) {
