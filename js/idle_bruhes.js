@@ -13,7 +13,7 @@ onmessage = function(e) {
         if(idle_bruh_shop.hasOwnProperty(key)) {
             obj = idle_bruh_shop[key];
             if(obj.owned > 0) {
-                let interval = 1000/(obj.bps * obj.owned).toFixed(3);
+                let interval = (1000/(obj.bps * obj.owned)).toFixed(3);
                 timeouts.push(setInterval(function() {
                     quenedBruhes++;
                 }, interval));    
@@ -25,6 +25,7 @@ onmessage = function(e) {
             if(quenedBruhes > 0) {
                 postMessage(quenedBruhes);
             }
-        }, 10); 
+        }, 10);
+        masterTimeout = true;
     }
 };
