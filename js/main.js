@@ -5,9 +5,7 @@ $(document).ready(function () {
     app.idle_bruhes_worker.postMessage(app.idle_bruhes_shop);
     app.idle_bruhes_worker.onmessage = function (e) {
         let data = e.data;
-        if (typeof data === 'boolean' && data) {
-            app.bruhs++;
-        }
+        app.bruhs += data;
     }
 });
 // noinspection JSUnresolvedFunction
