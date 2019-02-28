@@ -26,7 +26,7 @@ onmessage = function(e) {
                 postMessage(quenedBruhes);
                 quenedBruhes = 0;
             }
-        }, 10);
+        }, 50);
         masterTimeout = true;
     }
 };
