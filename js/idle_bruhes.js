@@ -24,6 +24,7 @@ onmessage = function(e) {
         setInterval(function() {
             if(quenedBruhes > 0) {
                 postMessage(quenedBruhes);
+                quenedBruhes = 0;
             }
         }, 10);
         masterTimeout = true;
