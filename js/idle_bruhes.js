@@ -2,8 +2,7 @@ let idle_bruh_shop = null;
 let timeouts = [];
 let masterTimeout = false;
 let quenedBruhes = 0;
-onmessage = function(e) {
-    postMessage('received');
+onmessage = function(e) {   
     idle_bruh_shop = e.data;
     let timeout_id = timeouts.pop();
     while(typeof timeout_id !== "undefined") {
