@@ -20,7 +20,7 @@ onmessage = function(e) {
             }
         }
     }
-    if(!masterTimout) {
+    if(!masterTimeout) {
         setInterval(function() {
             if(quenedBruhes > 0) {
                 postMessage(quenedBruhes);
