@@ -43,7 +43,7 @@ const app = new Vue({
                 title: 'Caveman',
                 description: 'Lived before time was recorded. Barely knew English.',
                 quote: 'Ooga Booga?',
-                cost: 50,
+                cost: 10,
                 cost_add: 5,
                 owned: 0
             },
@@ -52,7 +52,7 @@ const app = new Vue({
                 title: 'Retro 1980s Grandpa',
                 description: 'Lived in the stone age. Doesn\'t know slang. Took 4 hours to teach him how to bruh.',
                 quote: 'Back in the day, we didn\'t have fancy electronics. We played Pong on huge arcade cabinets. By the way, I was the king of Pong.',
-                cost: 250,
+                cost: 100,
                 cost_add: 10,
                 owned: 0
             },
@@ -61,7 +61,7 @@ const app = new Vue({
                 title: 'Cool face (▀̿Ĺ̯▀̿ ̿)',
                 description: 'Mr. Cool Face. Thinks he\'s better than everyone else because he hangs out with the other cool faces.',
                 quote: '2 Cool 4 U',
-                cost: 500,
+                cost: 250,
                 cost_add: 15,
                 owned: 0
             },
@@ -70,7 +70,7 @@ const app = new Vue({
                 title: 'Money face ($ʖ$)',
                 description: 'Mr. Money. Takes showers in money. And baths. A morph between Lenny face and Dollar bill. Made in a lab.',
                 quote: 'Show me da money!',
-                cost: 750,
+                cost: 500,
                 cost_add: 25,
                 owned: 0
             }
