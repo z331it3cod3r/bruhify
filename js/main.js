@@ -25,12 +25,13 @@ const app = new Vue({
             promos: {
                 barrel_maker: false,
                 bruh: false,
-                aut0: false
+                aut0: false,
+                faideye: false
             }
         },
         upgrade: {
             i: 0,
-            costs: [100, 250, 500, 1000, 1750, 2500, 5000, 7500, 10000, false]
+            costs: [100, 250, 500, 1000, 1750, 2500, 5000, 7500, 10000, 12500, 15000, 20000, 30000, false]
         },
         timeouts: {
             troll_img: false,
@@ -118,7 +119,7 @@ const app = new Vue({
             }
         },
         tick: function () {
-            if (this.bruhs >= 4500 && cache('aut0')) {
+            if (this.bruhs >= 5000 && !this.cache.promos.aut0 && cache('aut0')) {
                 alert('promo code: aut0');
             }
         },
@@ -130,6 +131,8 @@ const app = new Vue({
                 this.multiplier += 3;
             } else if (promo_code('aut0')) {
                 setInterval(this.bruh, 750)
+            } else if (promo_code('faideye')) {
+                this.multiplier += 10;
             } else {
                 $('#promo').addClass('border-danger');
             }
